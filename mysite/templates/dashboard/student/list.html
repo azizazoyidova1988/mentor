@@ -1,0 +1,86 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Students List</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{%url 'dashboard' %}">Home</a></li>
+          <li class="breadcrumb-item active">Students List</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<form method="post">
+      {% csrf_token%}
+      <select onchange="this.form.submit()" name="order_filter">
+        <option value="all" {% if filter == "all" %}selected{% endif %}>Hammasi</option>
+        <option value="frontend" {% if filter == "frontend" %}selected{% endif %}>Frontend</option>
+        <option value="backend" {% if filter == "backend" %}selected{% endif %}>Backend</option>
+      </select>
+
+    </form>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Students List</h3>
+
+                <div class="card-tools">
+                    <div class="btn btn-block btn-success"><a href="{% url 'students_add' %}">Add</a></div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Date</th>
+                      <th>Subject</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    {% for student in students %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ student.full_name }}</td>
+                      <td>{{ student.created_at }}</td>
+                      <td>{{ student.subject }}</td>
+                      <td><div class="btn btn-block btn-warning"><a href="{% url 'students_edit' student_id=student.id   %}">Edit</a></div></td>
+                      <td><div class="btn btn-block btn-danger"><a href="{% url 'students_delete' student_id=student.id  %}">Delete</a></div></td>
+<!--                      {% if student.status == 'frontend' and 'backend' %}-->
+<!--                      <td><div class="btn btn-block btn-warning"><a href="{% url 'status' student_id=student.id  status='frontend' %}">Frontend</a></div></td>-->
+<!--                      <td><div class="btn btn-block btn-danger"><a href="{% url 'status' student_id=student.id status='backend' %}">Backend</a></div></td>-->
+<!--                    {% elif student.status == 'frontend' %}-->
+<!--                        Frontend-->
+<!--                        {% elif student.status == 'backend' %}-->
+<!--                        Backend-->
+<!--                        {% endif %}-->
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

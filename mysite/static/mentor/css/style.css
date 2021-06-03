@@ -519,7 +519,7 @@ section {
 .breadcrumbs {
   margin-top: 73px;
   text-align: center;
-  background: #5fcf80;
+  background: #0d6efd;
   padding: 30px 0;
   color: #fff;
 }
@@ -614,7 +614,7 @@ section {
 --------------------------------------------------------------*/
 .why-us .content {
   padding: 30px;
-  background: #5fcf80;
+  background: #c75fce;
   border-radius: 4px;
   color: #fff;
 }
@@ -633,7 +633,7 @@ section {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   padding: 6px 30px 8px 30px;
-  color: #fff;
+  color: #ff0000;
   border-radius: 50px;
   transition: all ease-in-out 0.4s;
 }
@@ -644,7 +644,7 @@ section {
 
 .why-us .content .more-btn:hover {
   color: #5fcf80;
-  background: #fff;
+  background: #ff0000;
 }
 
 .why-us .icon-boxes .icon-box {
@@ -1401,11 +1401,12 @@ section {
 }
 
 #footer .footer-top .footer-contact h4 {
-  font-size: 22px;
+  font-size: 30px;
   margin: 0 0 30px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
   font-weight: 700;
+  color: DodgerBlue;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1419,7 +1420,7 @@ section {
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: #cd0dfd;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1452,7 +1453,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: DodgerBlue;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1464,7 +1465,7 @@ section {
 }
 
 #footer .footer-newsletter {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 #footer .footer-newsletter h4 {

@@ -1,0 +1,22 @@
+{% load static %}
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="{% url 'home' %}">Mentor</a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li ><a class= "{{home_page}}" href="{% url 'home' %}">Home</a></li>
+          <li ><a class= "{{about_page}}" href="{% url 'about' %}">About</a></li>
+          <li ><a class= "{{course_page}}" href="{% url 'courses' %}">Courses</a></li>
+          <li ><a class= "{{trainer_page}}" href= "{% url 'trainers' %}">Trainers</a></li>
+          <li ><a class= "{{event_page}}" href="{% url 'events' %}">Events</a></li>
+          <li ><a class= "{{contact_page}}" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="{% url 'courses' %}" class="get-started-btn">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
